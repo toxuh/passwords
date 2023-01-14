@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import "./App.sass";
+
+// инпут тип ранж, отображение пароля как в оне пассворд
+
 function App() {
   let letters = "abcdefghijklmnopqrstuvwxyz";
   const [randomPassword, setRandomPassword] = useState("");
@@ -28,38 +32,58 @@ function App() {
   };
 
   return (
-    <div className="Container">
-      <div>Password settings</div>
-      <input
-        type="number"
-        value={passwordLength}
-        onChange={(e) => setPasswordLength(Number(e.target.value))}
-      />
-      <div>Enter password length</div>
-      <input
-        type="checkbox"
-        checked={isAddCapitalLetters}
-        onChange={(e) => setIsAddCapitalLetters(e.target.checked)}
-      />
-      <div>Include capital letters</div>
-      <input
-        type="checkbox"
-        checked={isNumbers}
-        onChange={(e) => {
-          setIsNumbers(e.target.checked);
-        }}
-      />
-      <div>Include numbers</div>
-      <input
-        type="checkbox"
-        checked={isSymbol}
-        onChange={(e) => {
-          setIsSymbol(e.target.checked);
-        }}
-      />
-      <div>Include special characters</div>
-      <input type="text" value={randomPassword} />
-      <button onClick={generate}>Generate</button>
+    <div className="GeneratePassword">
+      <div className="GeneratePasswordWrapper">
+        <h1>Password Generator</h1>
+        <input className="PasswordInput" type="text" value={randomPassword} />
+        <h3>Length: {passwordLength}</h3>
+        <div className="RangeWrapper">
+          <span>4</span>
+          <input
+            type="range"
+            value={passwordLength}
+            min="4"
+            max="32"
+            onChange={(e) => setPasswordLength(Number(e.target.value))}
+          />
+          <span>32</span>
+        </div>
+        <h3>Settings</h3>
+        <div className="SettingsWrapper">
+          <div>Include Uppercase</div>
+          <input
+            className="CheckBox"
+            type="checkbox"
+            checked={isAddCapitalLetters}
+            onChange={(e) => setIsAddCapitalLetters(e.target.checked)}
+          />
+        </div>
+        <div className="SettingsWrapper">
+          <div>Include Numbers</div>
+          <input
+            className="CheckBox"
+            type="checkbox"
+            checked={isNumbers}
+            onChange={(e) => {
+              setIsNumbers(e.target.checked);
+            }}
+          />
+        </div>
+        <div className="SettingsWrapper">
+          <div>Include Symbols</div>
+          <input
+            className="CheckBox"
+            type="checkbox"
+            checked={isSymbol}
+            onChange={(e) => {
+              setIsSymbol(e.target.checked);
+            }}
+          />
+        </div>
+        <button className="GenerateButton" onClick={generate}>
+          Generate password
+        </button>
+      </div>
     </div>
   );
 }
