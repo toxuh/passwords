@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import cn from "classnames";
 
 import "./App.sass";
 
@@ -31,11 +32,28 @@ function App() {
     setRandomPassword(password);
   };
 
+  const passwordArray = randomPassword.split("");
+
+  const numbersArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  // const loaderClasses = cn("PasswordList__item", {
+  //   disabled: !isFetching,
+  // });
+
   return (
     <div className="GeneratePassword">
       <div className="GeneratePasswordWrapper">
         <h1>Password Generator</h1>
-        <input className="PasswordInput" type="text" value={randomPassword} />
+        {/*<input className="PasswordInput" type="text" value={randomPassword} />*/}
+        <ul className="PasswordList">
+          {randomPassword
+            ? passwordArray.map((item, i) => (
+                <li className={`PasswordList__item`} key={i}>
+                  {item}
+                </li>
+              ))
+            : "CLICK GENERATE"}
+        </ul>
         <h3>Length: {passwordLength}</h3>
         <div className="RangeWrapper">
           <span>4</span>
