@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import cn from "classnames";
 
 import "./App.sass";
 
@@ -36,10 +35,6 @@ function App() {
 
   const numbersArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  // const loaderClasses = cn("PasswordList__item", {
-  //   disabled: !isFetching,
-  // });
-
   return (
     <div className="GeneratePassword">
       <div className="GeneratePasswordWrapper">
@@ -48,7 +43,12 @@ function App() {
         <ul className="PasswordList">
           {randomPassword
             ? passwordArray.map((item, i) => (
-                <li className={`PasswordList__item`} key={i}>
+                <li
+                  className={`PasswordList__item ${
+                    numbersArray.includes(Number(item)) ? "NumberItem" : ""
+                  }`}
+                  key={i}
+                >
                   {item}
                 </li>
               ))
