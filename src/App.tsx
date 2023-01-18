@@ -34,6 +34,7 @@ function App() {
   const passwordArray = randomPassword.split("");
 
   const numbersArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const symbolArray = [",!,@,#,$,%,^,&,*,(,),"];
 
   return (
     <div className="GeneratePassword">
@@ -46,7 +47,7 @@ function App() {
                 <li
                   className={`PasswordList__item ${
                     numbersArray.includes(Number(item)) ? "NumberItem" : ""
-                  }`}
+                  } ${symbolArray.includes(item) ? "SymbolItem" : ""}`}
                   key={i}
                 >
                   {item}
