@@ -1,15 +1,17 @@
 .GeneratePassword
-  background: radial-gradient(circle, rgba(1,5,28,1) 0%, rgba(1,7,98,1) 100%)
+  background: radial-gradient(circle, rgba(1, 5, 28, 1) 0%, rgba(1, 7, 98, 1) 100%)
   height: 100vh
   display: flex
   align-items: center
   justify-content: center
+
   .GeneratePasswordWrapper
     //text-align: center
     h1
       font-weight: 400
       color: white
       font-size: 46px
+      margin-bottom: 20px
 
     h3
       font-weight: 400
@@ -35,9 +37,6 @@
       border-radius: 10px
       margin-bottom: 10px
 
-      .CheckBox
-        cursor: pointer
-
     .PasswordList
       padding: 15px
 
@@ -45,11 +44,12 @@
     .RangeWrapper
       padding: 15px
       margin-bottom: 20px
+
       input
         width: 320px
 
     .GenerateButton
-      background: linear-gradient(90deg, rgba(100,94,232,1) 0%, rgba(145,109,175,1) 100%)
+      background: linear-gradient(90deg, rgba(100, 94, 232, 1) 0%, rgba(145, 109, 175, 1) 100%)
       border-radius: 10px
       height: 55px
       padding: 15px
@@ -63,7 +63,7 @@
       margin-top: 20px
 
       &:hover
-        color: blue
+        color: #0572ec
 
     .PasswordList
       justify-content: center
@@ -73,10 +73,47 @@
 
       &__item
         list-style-type: none
-        //padding: 0 1px
 
         &.NumberItem
-          color: blue
+          color: #0572ec
 
         &.SymbolItem
-          color: red
+          color: #e60000
+
+    .SettingsWrapper
+      .Switch
+        position: relative
+        display: inline-block
+        width: 55px
+        height: 30px
+
+        .Checkbox
+          display: none
+
+        .Slider
+          position: absolute
+          cursor: pointer
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          background-color: #6f7787
+          transition: .4s
+          border-radius: 16px
+
+          &:before
+            position: absolute
+            content: ""
+            height: 24px
+            width: 24px
+            left: 3px
+            bottom: 3px
+            background-color: white
+            transition: 0.4s
+            border-radius: 50%
+
+        input:checked + .Slider
+          background-color: #645ee8
+
+        input:checked + .Slider:before
+          transform: translateX(25px)
