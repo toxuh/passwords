@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import "./App.sass";
 
-// инпут тип ранж, отображение пароля как в оне пассворд
-
 function App() {
   let letters = "abcdefghijklmnopqrstuvwxyz";
   const numbers = "0123456789";
@@ -34,27 +32,26 @@ function App() {
     setRandomPassword(password);
   };
 
-  const passwordArray = randomPassword.split("");
-
   return (
     <div className="GeneratePassword">
       <div className="GeneratePasswordWrapper">
         <h1>Password Generator</h1>
-        {/*<input className="PasswordInput" type="text" value={randomPassword} />*/}
-        <ul className="PasswordList">
-          {randomPassword
-            ? passwordArray.map((item, i) => (
-                <li
-                  className={`PasswordList__item ${
-                    numbers.split("").includes(item) ? "NumberItem" : ""
-                  } ${symbols.split("").includes(item) ? "SymbolItem" : ""}`}
-                  key={i}
-                >
-                  {item}
-                </li>
-              ))
-            : "CLICK GENERATE"}
-        </ul>
+        <div className="PasswordList">
+          {randomPassword ? (
+            randomPassword.split("").map((item, i) => (
+              <span
+                className={`PasswordList__item ${
+                  numbers.split("").includes(item) ? "NumberItem" : ""
+                } ${symbols.split("").includes(item) ? "SymbolItem" : ""}`}
+                key={i}
+              >
+                {item}
+              </span>
+            ))
+          ) : (
+            <span className="PasswordList__item">CLICK GENERATE</span>
+          )}
+        </div>
         <h3>Length: {passwordLength}</h3>
         <div className="RangeWrapper">
           <span>4</span>
