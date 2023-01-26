@@ -41,8 +41,8 @@ function App() {
             randomPassword.split("").map((item, i) => (
               <span
                 className={`PasswordList__item ${
-                  numbers.split("").includes(item) ? "NumberItem" : ""
-                } ${symbols.split("").includes(item) ? "SymbolItem" : ""}`}
+                  numbers.split("").includes(item) ? "NumberColor" : ""
+                } ${symbols.split("").includes(item) ? "SymbolColor" : ""}`}
                 key={i}
               >
                 {item}
@@ -76,7 +76,7 @@ function App() {
               checked={isAddCapitalLetters}
               onChange={(e) => setIsAddCapitalLetters(e.target.checked)}
             />
-            <span className="Slider"></span>
+            <span className="Slider" />
           </label>
         </div>
         <div className="SettingsWrapper">
@@ -90,7 +90,7 @@ function App() {
                 setIsNumbers(e.target.checked);
               }}
             />
-            <span className="Slider"></span>
+            <span className="Slider" />
           </label>
         </div>
         <div className="SettingsWrapper">
@@ -104,7 +104,7 @@ function App() {
                 setIsSymbol(e.target.checked);
               }}
             />
-            <span className="Slider"></span>
+            <span className="Slider" />
           </label>
         </div>
         <button className="GenerateButton" onClick={generate}>
