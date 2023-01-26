@@ -52,7 +52,9 @@ function App() {
             <span className="PasswordList__item">CLICK GENERATE</span>
           )}
         </div>
-        <h3>Length: {passwordLength}</h3>
+        <h3>
+          Length: <span>{passwordLength}</span>
+        </h3>
         <div className="RangeWrapper">
           <span>4</span>
           <input
