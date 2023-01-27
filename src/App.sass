@@ -1,40 +1,55 @@
+//Colors
+$white: #ffffff
+$black: #000000
+$yankees-blue: #242e42
+$dark-gunmetal: #161e2e
+$ghost-white: #f9f9f9
+$deep-dark-yankees-blue: #1e2738
+$dark-metal-saurus: #6f7787
+$deep-yankees-blue: #20293c
+$maya-blue: #67beff
+$tulip: #ff9090
+$majorelle-blue: #645ee8
+$purple-mountain-majesty: #916daf
+
+
 .GeneratePassword
   align-items: center
-  background: #242E42
+  background: $yankees-blue
   display: flex
   height: 100vh
   justify-content: center
 
   .GeneratePasswordWrapper
-    background: #161E2E
+    background: $dark-gunmetal
     border-radius: 10px
     padding: 30px
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+    box-shadow: 0 4px 10px rgba($black, 0.25)
 
     h1
-      color: #f9f9f9
+      color: $ghost-white
       font-size: 46px
       font-weight: 400
       margin-bottom: 25px
       text-align: center
 
     h3
-      color: rgba(#f9f9f9, 0.6)
+      color: rgba($ghost-white, 0.6)
       font-size: 18px
       font-weight: 400
       margin-bottom: 10px
       text-transform: uppercase
 
       span
-        color: #f9f9f9
+        color: $ghost-white
 
     .SettingsWrapper,
     .RangeWrapper,
     .PasswordList
       align-items: center
-      background: #1E2738
+      background: $deep-dark-yankees-blue
       border-radius: 10px
-      color: rgb(#f9f9f9, .7)
+      color: rgb($ghost-white, .7)
       display: flex
       font-size: 20px
       height: 70px
@@ -55,21 +70,20 @@
 
       input[type=range]::-webkit-slider-runnable-track
         height: 5px
-        background-color: rgba(#6f7787, 0.4)
+        background-color: rgba($dark-metal-saurus, 0.4)
 
       input[type=range]::-webkit-slider-thumb
         cursor: pointer
         margin-top: -5px
 
       span
-        color: #f9f9f9
-
+        color: $ghost-white
 
     .GenerateButton
-      background: linear-gradient(90deg, rgba(100, 94, 232, 1) 0%, rgba(145, 109, 175, 1) 100%)
+      background: linear-gradient(90deg, rgba($majorelle-blue, 1) 0%, rgba($purple-mountain-majesty, 1) 100%)
       border: none
       border-radius: 10px
-      color: #f9f9f9
+      color: $ghost-white
       cursor: pointer
       font-size: 18px
       font-weight: 700
@@ -81,10 +95,10 @@
       width: 100%
 
       &:hover
-        color: rgb(#f9f9f9, .8)
+        color: rgb($ghost-white, .8)
 
     .PasswordList
-      background: #20293C
+      background: $deep-yankees-blue
       color: white
       display: flex
       font-size: 18px
@@ -97,10 +111,10 @@
         list-style-type: none
 
         &.NumberColor
-          color: #67beff
+          color: $maya-blue
 
         &.SymbolColor
-          color: #ff9090
+          color: $tulip
 
     .SettingsWrapper
       .Switch
@@ -112,8 +126,8 @@
         .Checkbox
           display: none
 
-        .Slider
-          background-color: #6f7787
+        .SwitchWrapper
+          background-color: $dark-metal-saurus
           border-radius: 16px
           bottom: 0
           cursor: pointer
@@ -134,8 +148,8 @@
             transition: 0.4s
             width: 24px
 
-        input:checked + .Slider
-          background-color: #645ee8
+        input:checked + .SwitchWrapper
+          background-color: $majorelle-blue
 
-        input:checked + .Slider:before
+        input:checked + .SwitchWrapper:before
           transform: translateX(25px)

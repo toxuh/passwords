@@ -16,7 +16,7 @@ function App() {
   const generate = () => {
     let password = "";
     if (isAddCapitalLetters) {
-      letters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      letters += letters.toUpperCase();
     }
     if (isNumbers) {
       letters += numbers;
@@ -76,7 +76,7 @@ function App() {
               checked={isAddCapitalLetters}
               onChange={(e) => setIsAddCapitalLetters(e.target.checked)}
             />
-            <span className="Slider" />
+            <span className="SwitchWrapper" />
           </label>
         </div>
         <div className="SettingsWrapper">
@@ -90,7 +90,7 @@ function App() {
                 setIsNumbers(e.target.checked);
               }}
             />
-            <span className="Slider" />
+            <span className="SwitchWrapper" />
           </label>
         </div>
         <div className="SettingsWrapper">
@@ -104,7 +104,7 @@ function App() {
                 setIsSymbol(e.target.checked);
               }}
             />
-            <span className="Slider" />
+            <span className="SwitchWrapper" />
           </label>
         </div>
         <button className="GenerateButton" onClick={generate}>
