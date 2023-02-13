@@ -34,13 +34,11 @@ function App() {
     setRandomPassword(password);
   };
 
-  const handleClick = () => {};
-
   return (
     <div className="GeneratePassword">
       <div className="GeneratePasswordWrapper">
         <h1>Password Generator</h1>
-        <div className="PasswordList" role="presentation" onClick={handleClick}>
+        <div className="PasswordList">
           {randomPassword ? (
             randomPassword.split("").map((item, i) => (
               <span
